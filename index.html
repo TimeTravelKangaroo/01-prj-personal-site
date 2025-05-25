@@ -2,10 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Personal Site</title>
+  <title>Amelie Garcia</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Add your HTML content here -->
+  <!-- Navigation Menu -->
+  <nav>
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#photos">Photos</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <!-- Hero image and name -->
+    <img src="/img/art/synesthesia.jpg" alt="An artwork of mine" class="hero-img">
+    <h1>Hi, I'm Amelie</h1>
+    <p class="hero-tagline">Aspiring Web Developer & Designer</p>
+  </section>
+
+  <!-- Bio Section -->
+  <section class="bio" id="about">
+    <h2>About Me</h2>
+    <p>
+      <!-- Write a short bio about yourself here -->
+      I am a GMU undergrad student passionate about learning all things design.
+    </p>
+    <h4>Fun facts about me:</h4>
+    <ul class="about-list">
+      <li>When I was a kid, I wanted to be an archeologist.</li>
+      <li>My favorite food is pho soup.</li>
+      <li>I love listening to indie music.</li>
+    </ul>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+    <h2>My Skills</h2>
+    <ul>
+      <!-- List your skills here -->
+      <li>Graphic Design</li>
+      <li>Adobe Illustrator</li>
+      <li>Adobe InDesign</li>
+      <p>Learning:</p>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>Pixel Art in Aseprite</li>
+      <li>Game Development in Godot</li>
+    </ul>
+  </section>
+
+  <!-- Photo Slider Section -->
+  <section class="photo-slider" id="photos">
+    <h2>My Photos</h2>
+    <!-- Photo slider layout: buttons on the left and right sides of the photos -->
+    <div class="photo-slider-row">
+      <!-- The container holds the left button, photos, and right button side by side -->
+      <!-- Left button -->
+      <button class="slider-btn" id="slider-left" aria-label="Scroll left">&#8592;</button>
+      <!-- Photos in the center -->
+      <div class="slider-container" id="slider-container">
+        <!-- Add your photos here. You can add more <img> tags as needed. -->
+        <img src="img/hero-bg.jpg" alt="Artwork 1" class="slider-photo">
+        <img src="img/laptop.jpg" alt="Artwork 2" class="slider-photo">
+        <img src="img/me.png" alt="Artwork 3" class="slider-photo">
+      </div>
+      <!-- Right button -->
+      <button class="slider-btn" id="slider-right" aria-label="Scroll right">&#8594;</button>
+    </div>
+  </section>
+
+  <!-- Add simple JavaScript for slider buttons -->
+  <script>
+    // Get the slider container and buttons
+    const sliderContainer = document.getElementById('slider-container');
+    const btnLeft = document.getElementById('slider-left');
+    const btnRight = document.getElementById('slider-right');
+
+    // Scroll left when left button is clicked
+    btnLeft.addEventListener('click', function() {
+      sliderContainer.scrollBy({ left: -200, behavior: 'smooth' });
+    });
+    // Scroll right when right button is clicked
+    btnRight.addEventListener('click', function() {
+      sliderContainer.scrollBy({ left: 200, behavior: 'smooth' });
+    });
+  </script>
+  <!-- Projects Section -->
+  <section class="skills" id="projects"><!-- Reusing skills class for simple styling -->
+    <h2>My Projects</h2>
+    <ul>
+      <!-- List your projects here -->
+      <p>coming soon...</p>
+    </ul>
+  </section>
 </body>
 </html>

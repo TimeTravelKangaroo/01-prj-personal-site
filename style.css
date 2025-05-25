@@ -1,1 +1,220 @@
-/* Add you CSS here */
+/* style.css - Simple, beginner-friendly styles for your personal website */
+
+body {
+  font-family: Arial, sans-serif; /* Easy-to-read font */
+  margin: 0;
+  padding: 0;
+  /* Add a subtle ombre (gradient) background */
+  background: linear-gradient(135deg, #F3F4F6 0%, #8bcffa 100%); /* Light gray to soft purple */
+  color: #222;
+}
+
+/* Center all main headings on the page */
+h1, h2 {
+  /* This centers the text horizontally */
+  text-align: center;
+}
+
+/* Navigation menu styles */
+nav {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 10px 0;
+  position: sticky; /* Keeps nav at the top when scrolling */
+  top: 0;
+  z-index: 100;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+nav ul li {
+  display: inline;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #5e9afb;
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: color 0.2s;
+}
+nav ul li a:hover {
+  color: #222;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  background: #5e9afb; /* Soft background for hero */
+  padding: 40px 20px 30px 20px;
+}
+.hero-img {
+  width: 150px;
+  height: 150px;
+  /* This makes the image a star shape */
+  clip-path: polygon(
+    50% 2%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  object-fit: cover; /* Crops the image to fill the shape */
+  object-position: 100% 50%; /* Adjusts the focus of the image */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 16px;
+  animation: spin 10s linear infinite; /* Smoothly rotates the image */
+}
+
+/* Animation for rotating the hero image */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hero-tagline {
+  color: #fff;
+  font-size: 1.1em;
+}
+
+/* Bio Section */
+.bio {
+  background: #fff;
+  margin: 30px auto;
+  max-width: 600px;
+  padding: 24px 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.bio h2 {
+  margin-top: 0;
+}
+
+/* Skills Section */
+.skills {
+  background: #fff;
+  margin: 30px auto;
+  max-width: 600px;
+  padding: 24px 18px;
+  border-radius: 8px;
+}
+.skills h2 {
+  color: #8b72d5;
+}
+.skills ul {
+  list-style: disc inside;
+  padding-left: 0;
+}
+.skills li {
+  margin-bottom: 8px;
+}
+
+/* About Section */
+.about {
+  background: #fff;
+  margin: 30px auto;
+  max-width: 600px;
+  padding: 24px 18px;
+  border-radius: 8px;
+}
+.about-list {
+  list-style: disc inside;
+  padding-left: 0;
+}
+.about-list li {
+  margin-bottom: 8px;
+}
+
+/* Photo Slider Section */
+.photo-slider {
+  background: #fff;
+  margin: 30px auto 40px auto;
+  max-width: 700px;
+  padding: 24px 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Layout for the slider row: buttons on the sides, photos in the center */
+.photo-slider-row {
+  display: flex; /* Arrange children in a row */
+  align-items: center; /* Vertically center buttons and photos */
+  justify-content: center; /* Center the whole row */
+  width: 100%;
+}
+
+.slider-container {
+  display: flex; /* Simple horizontal layout */
+  overflow-x: auto; /* Allows horizontal scrolling */
+  gap: 16px; /* Space between photos */
+  padding-bottom: 8px;
+  max-width: 100%;
+}
+.slider-photo {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  background: #ddd;
+}
+
+/* Style for slider scroll buttons */
+.slider-btn {
+  background: #e0e0e0;
+  border: none;
+  color: #333;
+  font-size: 1.5em;
+  padding: 8px 12px;
+  margin: 0 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  transition: background 0.2s;
+}
+.slider-btn:hover {
+  background: #A78BFA;
+}
+
+h4 {
+  color: #5e9afb;
+}
+
+/* Make sure sections are not hidden behind the navbar when using anchor links */
+section {
+  /* This adds space above each section when scrolled to by a link */
+  scroll-margin-top: 60px; /* Adjust this value if your navbar height changes */
+}
+
+/* Responsive: Make sure it looks good on phones */
+@media (max-width: 600px) {
+  .bio, .skills, .photo-slider {
+    max-width: 98%;
+    padding: 14px 4px;
+  }
+  .slider-photo {
+    width: 120px;
+    height: 80px;
+  }
+  .slider-btn {
+    font-size: 1.2em;
+    padding: 6px 10px;
+    margin: 0 4px;
+  }
+}
