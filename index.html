@@ -32,7 +32,7 @@
       <!-- Write a short bio about yourself here -->
       I am a GMU undergrad student passionate about learning all things design.
     </p>
-    <h4>Fun facts about me:</h4>
+    <h4 class="h4">Fun facts about me:</h4>
     <ul class="about-list">
       <li>When I was a kid, I wanted to be an archeologist.</li>
       <li>My favorite food is pho soup.</li>
@@ -48,7 +48,9 @@
       <li>Graphic Design</li>
       <li>Adobe Illustrator</li>
       <li>Adobe InDesign</li>
-      <p>Learning:</p>
+    </ul>
+    <h4>Learning:</h4>
+    <ul>
       <li>HTML</li>
       <li>CSS</li>
       <li>JavaScript</li>
@@ -59,18 +61,25 @@
 
   <!-- Photo Slider Section -->
   <section class="photo-slider" id="photos">
-    <h2>My Photos</h2>
+    <h2>My Art and Designs</h2>
     <!-- Photo slider layout: buttons on the left and right sides of the photos -->
     <div class="photo-slider-row">
       <!-- The container holds the left button, photos, and right button side by side -->
       <!-- Left button -->
       <button class="slider-btn" id="slider-left" aria-label="Scroll left">&#8592;</button>
-      <!-- Photos in the center -->
-      <div class="slider-container" id="slider-container">
-        <!-- Add your photos here. You can add more <img> tags as needed. -->
-        <img src="img/hero-bg.jpg" alt="Artwork 1" class="slider-photo">
-        <img src="img/laptop.jpg" alt="Artwork 2" class="slider-photo">
-        <img src="img/me.png" alt="Artwork 3" class="slider-photo">
+      <!-- Photos in the center with fading effect on the sides -->
+      <div class="slider-fade">
+        <div class="slider-container" id="slider-container">
+          <!-- Add your photos here. You can add more <img> tags as needed. -->
+          <img src="img/art/pixil-frame-0.png" alt="Pixel Art" class="slider-photo">
+          <img src="img/AGarcia_Project 4.jpg" alt="Stationary and website mockup" class="slider-photo">
+          <img src="img/cheese-monkeys.png" alt="Cheese Monkeys book cover" class="slider-photo">
+          <img src="img/susan-kare-cover.jpg" alt="Susan Kare book cover" class="slider-photo">
+          <img src="img/oneshot-poster1.png" alt="Oneshot Poster 1" class="slider-photo">
+          <img src="img/oneshot-poster2.png" alt="Oneshot Poster 2" class="slider-photo">
+          <img src="img/oneshot-poster3.png" alt="Oneshot Poster 3" class="slider-photo">
+          <!-- You can add more images here! -->
+        </div>
       </div>
       <!-- Right button -->
       <button class="slider-btn" id="slider-right" aria-label="Scroll right">&#8594;</button>
@@ -95,7 +104,7 @@
   </script>
   <!-- Projects Section -->
   <section class="skills" id="projects"><!-- Reusing skills class for simple styling -->
-    <h2>My Projects</h2>
+    <h2>My Web Projects</h2>
     <ul>
       <!-- List your projects here -->
       <p>coming soon...</p>

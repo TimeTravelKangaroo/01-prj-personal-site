@@ -46,6 +46,39 @@ nav ul li a:hover {
   color: #222;
 }
 
+/* Updated navbar pastel colors to be a bit more saturated for better visibility */
+nav ul li:nth-child(1) a {
+  color: #5e9afb; /* Hero blue color for Home */
+}
+nav ul li:nth-child(2) a {
+  color: #7fd3f7; /* Less pale blue for About */
+}
+nav ul li:nth-child(3) a {
+  color: #ffd36b; /* Less pale yellow */
+}
+nav ul li:nth-child(4) a {
+  color: #6be7b6; /* Less pale green */
+}
+nav ul li:nth-child(5) a {
+  color: #cbb7f7; /* Pastel version of My Skills purple for 5th link */
+}
+
+nav ul li:nth-child(1) a:hover {
+  color: #1a4e7a; /* A darker blue for hero color hover */
+}
+nav ul li:nth-child(2) a:hover {
+  color: #2a4a5c; /* Dark blue for About hover */
+}
+nav ul li:nth-child(3) a:hover {
+  color: #7a5a1e; /* Dark yellow */
+}
+nav ul li:nth-child(4) a:hover {
+  color: #2a5c4a; /* Dark green */
+}
+nav ul li:nth-child(5) a:hover {
+  color: #8b72d5; /* My Skills purple for hover */
+}
+
 /* Hero Section */
 .hero {
   text-align: center;
@@ -112,14 +145,44 @@ nav ul li a:hover {
   border-radius: 8px;
 }
 .skills h2 {
-  color: #8b72d5;
+  color: #8b72d5; /* My Skills purple */
+  margin-top: 0;
+}
+/* Make My Projects heading match My Skills heading color */
+#projects h2 {
+  color: #8b72d5; /* My Skills purple */
 }
 .skills ul {
-  list-style: disc inside;
+  display: flex; /* Arrange tags in a row */
+  flex-wrap: wrap; /* Allow tags to wrap to the next line */
+  gap: 10px; /* Space between tags */
+  list-style: none; /* Remove default bullets */
   padding-left: 0;
+  margin: 18px 0 0 0;
 }
 .skills li {
-  margin-bottom: 8px;
+  background: #cbb7f7; /* Pastel version of My Skills purple */
+  color: #5e4b8b;
+  border-radius: 16px; /* Rounded corners for tag look */
+  padding: 6px 16px; /* Space inside each tag */
+  font-size: 1em;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  display: inline-block;
+  margin: 0; /* Remove default margin */
+  transition: background 0.2s;
+}
+.skills li:nth-child(2n) { background: #bfe2f8; color: #2a4a5c; } /* Pastel blue */
+.skills li:nth-child(3n) { background: #ffe6b3; color: #7a5a1e; } /* Pastel yellow */
+.skills li:nth-child(4n) { background: #d4f8e8; color: #2a5c4a; } /* Pastel green */
+
+.skills .learning-label {
+  background: none;
+  color: #8b72d5;
+  font-weight: bold;
+  padding: 0 8px 0 0;
+  border-radius: 0;
+  box-shadow: none;
+  display: inline;
 }
 
 /* About Section */
@@ -140,37 +203,74 @@ nav ul li a:hover {
 
 /* Photo Slider Section */
 .photo-slider {
-  background: #fff;
+  /* Removed background, border-radius, and box-shadow so it blends with the page background */
   margin: 30px auto 40px auto;
   max-width: 700px;
+  height: 300px;
   padding: 24px 18px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  position: relative; /* Needed for absolute centering */
+}
+.photo-slider h2 {
+  margin-top: 0;
+  margin-bottom: 0; /* Remove extra space below header */
+}
+/* Center the slider row vertically in the section, ignoring the header */
+.photo-slider-row {
+  position: absolute; /* Take out of normal flow */
+  top: 50%; /* Move to the vertical center */
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%); /* Center exactly */
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 240px;
 }
 
-/* Layout for the slider row: buttons on the sides, photos in the center */
-.photo-slider-row {
-  display: flex; /* Arrange children in a row */
-  align-items: center; /* Vertically center buttons and photos */
-  justify-content: center; /* Center the whole row */
+/* Fading effect on the sides of the slider */
+.slider-fade {
+  position: relative;
   width: 100%;
+  /* This makes sure the fade overlays are positioned correctly */
+}
+.slider-fade::before,
+.slider-fade::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 40px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none; /* Allows clicks to go through */
+}
+.slider-fade::before {
+  left: 0;
+  background: linear-gradient(to right, #bfe2f8 80%, transparent);
+}
+.slider-fade::after {
+  right: 0;
+  background: linear-gradient(to left, #a8d9f9 80%, transparent);
 }
 
 .slider-container {
   display: flex; /* Simple horizontal layout */
   overflow-x: auto; /* Allows horizontal scrolling */
   gap: 16px; /* Space between photos */
-  padding-bottom: 8px;
   max-width: 100%;
+  scroll-behavior: smooth;
+  /* Make sure the fade overlays are on top */
+  position: relative;
+  z-index: 1;
+  /* Add padding so first and last photo are not covered by the fade */
+  padding-left: 40px; /* Same as fade width */
+  padding-right: 40px; /* Same as fade width */
 }
 .slider-photo {
-  width: 180px;
-  height: 120px;
+  /* Increase the size of the photos by 50% */
+  width: 270px;   /* 180px * 1.5 = 270px */
+  height: 180px;  /* 120px * 1.5 = 180px */
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 3px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.08);
   background: #ddd;
 }
@@ -192,8 +292,22 @@ nav ul li a:hover {
   background: #A78BFA;
 }
 
-h4 {
+.h4 {
   color: #5e9afb;
+}
+
+/* Set each main section heading (except Home) to a medium-dark version of its navbar color for a friendlier look */
+#about h2 {
+  color: #399fc7; /* About - medium blue */
+}
+#skills h2 {
+  color: #c49a2e; /* Skills - medium gold/yellow */
+}
+#photos h2 {
+  color: #3bbf7a; /* Photos - medium green */
+}
+#projects h2 {
+  color: #8b72d5; /* Projects - main purple (already friendly) */
 }
 
 /* Make sure sections are not hidden behind the navbar when using anchor links */
