@@ -316,6 +316,17 @@ section {
   scroll-margin-top: 60px; /* Adjust this value if your navbar height changes */
 }
 
+/* Footer styles - simple and colorful for beginners */
+footer {
+  background: #e1b6f7; /* Pastel purple, different from main sections */
+  color: #5e4b8b;      /* Dark purple for contrast */
+  text-align: center;
+  padding: 18px 0;
+  font-size: 1em;
+  margin-top: 40px;
+  border-top: 2px solid #cbb7f7; /* Subtle border for separation */
+}
+
 /* Responsive: Make sure it looks good on phones */
 @media (max-width: 600px) {
   .bio, .skills, .photo-slider {
